@@ -1,0 +1,76 @@
+.fullscreen-dark-filter {
+    position: absolute;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: #000; /* тьма */
+    overflow: hidden;
+    opacity: 0;
+    animation: showLight 8s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.bonfire {
+    position: absolute;
+    right: 200px;
+    bottom: 10px;
+    width: 150px;
+    height: 200px;
+    background: url('/ds-fire.png') no-repeat center/contain;
+    cursor: pointer;
+}
+
+.flame {
+    position: relative;
+    left:50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(255,140,0,0.8), rgba(255,69,0,0));
+    border-radius: 50%;
+    opacity: 0;
+    animation: flame 1.5s infinite;
+}
+
+@keyframes flame {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.16; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 0.32; }
+    100% { transform: translateX(-50%) scale(1); opacity: 0.16; }
+}
+
+@keyframes showLight {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+.lit {
+    background: radial-gradient(circle at center, #2a1a0f, #000);
+}
+
+.lit .flame {
+    opacity: 1;
+}
+
+.lvlup {
+    border: #bd8f6a solid 1px;
+    border-radius: 6px;
+    position: absolute;
+    right: -300px;
+    top: 20px;
+    transition: right 0.6s ease;
+}
+
+.achive-visisble {
+    right: 20px
+}
+
+
